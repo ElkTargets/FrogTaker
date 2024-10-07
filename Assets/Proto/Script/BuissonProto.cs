@@ -1,4 +1,6 @@
 using System;
+using System.Reflection;
+using Frogs;
 using UnityEngine;
 
 namespace Proto.Script
@@ -11,6 +13,9 @@ namespace Proto.Script
 
         public bool somethingInside;
         public bool empty;
+        public FrogData frog;
+        
+        
 
         private void Awake() {
             playerDetected = false;
@@ -33,17 +38,35 @@ namespace Proto.Script
         private void FixedUpdate() {
             if (playerDetected) {
                 if (Input.GetAxis("Vertical") > 0.1f) {
-                    if (!somethingInside) {
-                        Debug.Log("Ce buisson est vide");
-                        empty = true;
-                        hillight.SetActive(false);
-                    }
-                    else {
-                        Debug.Log("Il y a quelque chose dans ce buisson");
-                        empty = true;
-                        hillight.SetActive(false);
-                    }
+                    Fouiller();
                 }
+            }
+        }
+
+        public void Fouiller() {
+            if (!somethingInside) {
+                Debug.Log("Ce buisson est vide");
+                empty = true;
+                hillight.SetActive(false);
+            }
+            else {
+                Debug.Log("Il y a quelque chose dans ce buisson");
+                empty = true;
+                
+                hillight.SetActive(false); 
+                
+                NewFrog.FrogName = frog.frogName;
+                NewFrog.FrogSprite = frog.frogSprite;
+                NewFrog.corroutineStart = true;
+                
+                Type type = typeof(FrogDexUnlocks);
+                FieldInfo field = type.GetField(frog.frogName, BindingFlags.Public | BindingFlags.Static);
+
+                if (field != null && field.FieldType == typeof(bool))
+                {
+                    field.SetValue(null, true);
+                }
+                
             }
         }
     }
