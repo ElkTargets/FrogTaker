@@ -14,6 +14,8 @@ namespace Proto.Script
         public bool somethingInside;
         public bool empty;
         public FrogData frog;
+
+        public GameObject dedFrog;
         
         
 
@@ -58,6 +60,9 @@ namespace Proto.Script
                 NewFrog.FrogName = frog.frogName;
                 NewFrog.FrogSprite = frog.frogSprite;
                 NewFrog.corroutineStart = true;
+                
+                GameObject newDedFrog = Instantiate(dedFrog);
+                newDedFrog.GetComponent<SpriteRenderer>().sprite = frog.frogSprite;
                 
                 Type type = typeof(FrogDexUnlocks);
                 FieldInfo field = type.GetField(frog.frogName, BindingFlags.Public | BindingFlags.Static);

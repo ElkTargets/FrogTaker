@@ -5676,6 +5676,7 @@ MonoBehaviour:
   somethingInside: 1
   empty: 0
   frog: {fileID: 11400000, guid: 26f53086f0fe1974585f5cbca8650a5c, type: 2}
+  dedFrog: {fileID: 5952544433219898207, guid: fa18580fad9167244a466971dfec88d4, type: 3}
 --- !u!1 &1378331897
 GameObject:
   m_ObjectHideFlags: 0
