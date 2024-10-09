@@ -9,5 +9,6 @@ namespace Frogs
         public string frogName;
         [TextArea(3,10)]
         public string frogDescription;
+        public AudioClip frogSound;
     }
 }

@@ -15,3 +15,4 @@ MonoBehaviour:
   frogSprite: {fileID: 21300000, guid: bd77a9b8576bdc24fbec66df82a28181, type: 3}
   frogName: Debug_Frog
   frogDescription: Debug_Frog Description
+  frogSound: {fileID: 8300000, guid: c642b459bb407454ebc24a03cedbb9e5, type: 3}

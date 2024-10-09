@@ -11,12 +11,14 @@ namespace Proto.Script
         public TextMeshProUGUI nameTMP;
         public TextMeshProUGUI descriptionTMP;
         public Image image;
+        public AudioSource audioSource;
 
         public void DisplayPanel(FrogData frogData)
         {
             nameTMP.text = frogData.frogName;
             descriptionTMP.text = frogData.frogDescription;
             image.sprite = frogData.frogSprite;
+            audioSource.clip = frogData.frogSound;
         }
     }
 }
