@@ -34,7 +34,9 @@ namespace Proto.Script
 
         public IEnumerator DisplayNewFrog()
         {
+            yield return new WaitForSeconds(1f);
             newFrogAnimation.Play();
+            
             yield return new WaitForSeconds(1.5f);
             GetComponent<RectTransform>().localScale = Vector3.zero;
         }
