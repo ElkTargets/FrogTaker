@@ -71,7 +71,9 @@ namespace Proto.Script
                 {
                     field.SetValue(null, true);
                 }
-                
+
+                FindObjectOfType<PlayerProto>().money += 1;
+
             }
         }
     }
