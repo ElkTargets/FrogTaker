@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2748a8a592a7e154e88dfe5cd194d322, type: 3}
+  m_Name: Intro Data 8
+  m_EditorClassIdentifier: 
+  characterName: Gnomarchand Louche
+  sprite: {fileID: 21300000, guid: 25b9fd10e057c71468fa8be6f81c0c3e, type: 3}
+  text: Waw ! Mais c'est que t'es super bavard toi ! Bon aller bonne chasse ! Et
+    oublie pas de venir me voir pour de super chapeaux !
+  audioClip: {fileID: 0}
+  nextData: {fileID: 11400000, guid: d9f327b50511c914aa22f7492f35283a, type: 2}

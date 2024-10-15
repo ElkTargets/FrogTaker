@@ -36,8 +36,8 @@ namespace Proto.Script
 
         public void ActiveInfoPanel()
         {
-            infoPanel.GetComponent<FrogInfo>().DisplayPanel(frogData);
             infoPanel.SetActive(true);
+            infoPanel.GetComponent<FrogInfo>().DisplayPanel(frogData);
         }
     }
 }

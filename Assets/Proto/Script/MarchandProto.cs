@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ namespace Proto.Script
     
         private bool _playerDetected;
         private PlayerProto _player;
+        private bool _facingRight;
+        public GameObject visualRotatif;
         
         // Chapeau Invisible
         private bool _hat1;
@@ -54,13 +57,16 @@ namespace Proto.Script
         public Sprite hat6Sprite;
 
         public GameObject hillight;
+        public GameObject hillightSprite;
     
         private void Awake() {
             _playerDetected = false;
             hillight.SetActive(false);
+            hillightSprite.SetActive(false);
             _hat1 = true;
             _hat1Buy = true;
             _player = FindObjectOfType<PlayerProto>();
+            _facingRight = true;
             DisplayPrices();
         }
 
@@ -100,12 +106,31 @@ namespace Proto.Script
             if (other.CompareTag("Player")) {
                 _playerDetected = true;
                 hillight.SetActive(true);
+                hillightSprite.SetActive(true);
+                
             }
         }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                if (other.transform.position.x > transform.position.x && !_facingRight)
+                {
+                    StartCoroutine(FlipRight());
+                }
+                if (other.transform.position.x < transform.position.x && _facingRight)
+                {
+                    StartCoroutine(FlipLeft());
+                }
+            }
+        }
+
         private void OnTriggerExit2D(Collider2D other) {
             if (other.CompareTag("Player")) {
                 _playerDetected = false;
                 hillight.SetActive(false);
+                hillightSprite.SetActive(false);
             }
         }
         
@@ -145,6 +170,7 @@ namespace Proto.Script
                     if (_player.money >= hat1Price) {
                         _hat1Buy = true;
                         _player.hatSpriteRenderer.sprite = hat1Sprite;
+                        _player.money -= hat1Price;
                         ChangeBuyButtonText();
                     }
                 }
@@ -155,6 +181,7 @@ namespace Proto.Script
                     if (_player.money >= hat2Price) {
                         _hat2Buy = true;
                         _player.hatSpriteRenderer.sprite = hat2Sprite;
+                        _player.money -= hat2Price;
                         ChangeBuyButtonText();
                     }
                 }
@@ -165,6 +192,7 @@ namespace Proto.Script
                     if (_player.money >= hat3Price) {
                         _hat3Buy = true;
                         _player.hatSpriteRenderer.sprite = hat3Sprite;
+                        _player.money -= hat3Price;
                         ChangeBuyButtonText();
                     }
                 }
@@ -175,6 +203,7 @@ namespace Proto.Script
                     if (_player.money >= hat4Price) {
                         _hat4Buy = true;
                         _player.hatSpriteRenderer.sprite = hat4Sprite;
+                        _player.money -= hat4Price;
                         ChangeBuyButtonText();
                     }
                 }
@@ -185,6 +214,7 @@ namespace Proto.Script
                     if (_player.money >= hat5Price) {
                         _hat5Buy = true;
                         _player.hatSpriteRenderer.sprite = hat5Sprite;
+                        _player.money -= hat5Price;
                         ChangeBuyButtonText();
                     }
                 }
@@ -195,10 +225,44 @@ namespace Proto.Script
                     if (_player.money >= hat6Price) {
                         _hat6Buy = true;
                         _player.hatSpriteRenderer.sprite = hat6Sprite;
+                        _player.money -= hat6Price;
                         ChangeBuyButtonText();
                     }
                 }
             }
+        }
+        
+        private IEnumerator FlipRight() {
+            if (!_facingRight) {
+                Quaternion startRotation = visualRotatif.transform.rotation;
+                Quaternion endRotation = Quaternion.Euler(0, 0, 0);
+                float elapsedTime = 0f;
+                float duration = 0.25f;
+                while (elapsedTime < duration) {
+                    visualRotatif.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / duration);
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+                visualRotatif.transform.rotation = endRotation;
+            }
+            _facingRight = true;
+        }
+
+        private IEnumerator FlipLeft()
+        {
+            if (_facingRight) {
+                Quaternion startRotation = visualRotatif.transform.rotation;
+                Quaternion endRotation = Quaternion.Euler(0, 180, 0);
+                float elapsedTime = 0f;
+                float duration = 0.25f;
+                while (elapsedTime < duration) {
+                    visualRotatif.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / duration);
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+                visualRotatif.transform.rotation = endRotation;
+            }
+            _facingRight = false;
         }
         
         public void Hat1() {
@@ -273,6 +337,11 @@ namespace Proto.Script
             _hat5 = false;
             _hat1 = false;
             ChangeHatOnShop();
+        }
+
+        public void FlipToTheLeft()
+        {
+            StartCoroutine(FlipLeft());
         }
     }
 }
