@@ -7,8 +7,8 @@ namespace Proto.Script
     public static class FrogDexUnlocks
     {
         public static bool Debug_Frog;
-        public static bool Frog2;
-        public static bool Frog3;
+        public static bool La_Belle_Verte;
+        public static bool LGS;
         
         public static bool Frog4;
         public static bool Frog5;

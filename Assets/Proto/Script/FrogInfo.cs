@@ -27,6 +27,10 @@ namespace Proto.Script
         {
             animator.SetTrigger("Dispawn");
         }
-        
+
+        public void ResetPanel()
+        {
+            animator.SetTrigger("Reset");
+        }
     }
 }

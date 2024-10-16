@@ -21,7 +21,7 @@ public class Intro : MonoBehaviour
     public TextMeshProUGUI descriptionTMP;
     public GameObject IntroCanvas;
     
-    private readonly Vector3 _targetOffset = new Vector3(2.15f, -0.25f, 0);
+    private readonly Vector3 _targetOffset = new Vector3(2.15f, 0.2f, 0);
     private Vector3 _startOffset;
     private readonly float _duration = 1.25f;
     private float _elapsedTime = 0f;

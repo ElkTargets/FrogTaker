@@ -61,11 +61,11 @@ namespace Proto.Script
                 NewFrog.FrogSprite = frog.frogSprite;
                 NewFrog.corroutineStart = true;
                 
-                GameObject newDedFrog = Instantiate(dedFrog);
+                GameObject newDedFrog = Instantiate(dedFrog, this.transform.position, Quaternion.identity);
                 newDedFrog.GetComponent<SpriteRenderer>().sprite = frog.frogSprite;
                 
                 Type type = typeof(FrogDexUnlocks);
-                FieldInfo field = type.GetField(frog.frogName, BindingFlags.Public | BindingFlags.Static);
+                FieldInfo field = type.GetField(frog.name, BindingFlags.Public | BindingFlags.Static);
 
                 if (field != null && field.FieldType == typeof(bool))
                 {

@@ -17,7 +17,7 @@ namespace Proto.Script
             if (!slotObject.activeSelf)
             {
                 Type type = typeof(FrogDexUnlocks);
-                FieldInfo field = type.GetField(frogData.frogName, BindingFlags.Public | BindingFlags.Static);
+                FieldInfo field = type.GetField(frogData.name, BindingFlags.Public | BindingFlags.Static);
                 if (field != null & field.FieldType == typeof(bool))
                 {
                     bool flagValue = (bool)field.GetValue(null);
