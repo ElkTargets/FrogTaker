@@ -15,5 +15,5 @@ MonoBehaviour:
   characterName: Gnomarchand Louche
   sprite: {fileID: 21300000, guid: 25b9fd10e057c71468fa8be6f81c0c3e, type: 3}
   text: Hey, Salut toi ! Tu veux te faire de l'argent ?
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2946ba30e14a90349978a845496504bd, type: 3}
   nextData: {fileID: 11400000, guid: 2cc0f5aea4ce98a4b945eff062f125a0, type: 2}

@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Hmmm... Tr\xE8s bien ! J'prend ce silence pour un oui ! Tout ce que t'as
     a faire c'est toucher les buissons que tu vois sur ton chemin ! Une fois que
     \xE7a c'est fait..."
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2946ba30e14a90349978a845496504bd, type: 3}
   nextData: {fileID: 11400000, guid: 75f0358273247534ea246dfc11ab0e8c, type: 2}

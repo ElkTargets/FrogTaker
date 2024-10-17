@@ -20,6 +20,7 @@ public class Intro : MonoBehaviour
     public Image portraitImage;
     public TextMeshProUGUI descriptionTMP;
     public GameObject IntroCanvas;
+    public AudioSource IntroAudio;
     
     private readonly Vector3 _targetOffset = new Vector3(2.15f, 0.2f, 0);
     private Vector3 _startOffset;
@@ -88,6 +89,12 @@ public class Intro : MonoBehaviour
         if (_typingCoroutine != null)
         {
             StopCoroutine(_typingCoroutine);
+        }
+
+        if (data.audioClip != null)
+        {
+            IntroAudio.clip = data.audioClip;
+            IntroAudio.Play();
         }
 
         _typingCoroutine = StartCoroutine(TypeText(data.text));

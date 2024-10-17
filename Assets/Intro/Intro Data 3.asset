@@ -17,5 +17,5 @@ MonoBehaviour:
   text: Rooooh ! Aller ! Tu vas voir c'est facile, et en plus avec cet argent tu
     vas pouvoir t'acheter de super chapeaux ! T'as envie d'avoir de beaux chapeaux
     hein ?
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2946ba30e14a90349978a845496504bd, type: 3}
   nextData: {fileID: 11400000, guid: 3de187f5d56fb9549962e648d8d6c071, type: 2}

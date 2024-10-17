@@ -16,5 +16,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 25b9fd10e057c71468fa8be6f81c0c3e, type: 3}
   text: Waw ! Mais c'est que t'es super bavard toi ! Bon aller bonne chasse ! Et
     oublie pas de venir me voir pour de super chapeaux !
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2946ba30e14a90349978a845496504bd, type: 3}
   nextData: {fileID: 11400000, guid: d9f327b50511c914aa22f7492f35283a, type: 2}

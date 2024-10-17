@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Tu obtiens une grenouille ! Tout l'monde adore les grenouilles !!! En plus
     y en a plein de diff\xE9rentes, t'as m\xEAme un joli bouquin pour les r\xE9pertorier
     !"
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2946ba30e14a90349978a845496504bd, type: 3}
   nextData: {fileID: 11400000, guid: 1b254ee74a2ee564bbb6125162b24e70, type: 2}
