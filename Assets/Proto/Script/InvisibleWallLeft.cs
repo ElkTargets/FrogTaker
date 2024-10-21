@@ -9,7 +9,7 @@ public class InvisibleWallLeft : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.transform.position = new Vector3(other.transform.position.x + 0.1f, 0, 0);
+            other.transform.position = new Vector3(other.transform.position.x + 0.1f, other.transform.position.y, 0);
         }
     }
 }
