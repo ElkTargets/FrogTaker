@@ -33,6 +33,7 @@ public class Intro : MonoBehaviour
         {
             StartIntro();
             other.GetComponent<PlayerProto>().noMove();
+            other.GetComponent<PlayerProto>().rb2d.velocity = Vector2.zero;
             _marchandProto.FlipToTheLeft();
         }
     }

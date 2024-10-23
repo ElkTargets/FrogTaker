@@ -14,6 +14,7 @@ public class PlayerProto : MonoBehaviour
     private bool _facingRight;
     public SpriteRenderer hatSpriteRenderer;
     public int money;
+    public Rigidbody2D rb2d;
 
     private void Awake()
     {
@@ -26,7 +27,8 @@ public class PlayerProto : MonoBehaviour
         if (PC) { moveValue = Input.GetAxis("Horizontal");};
         if (moveValue != 0) {
             animator.SetBool("isWalking", true);
-            transform.Translate(moveValue * moveSpeed * Time.deltaTime, 0, 0);
+            //transform.Translate(moveValue * moveSpeed * Time.deltaTime, 0, 0);
+            rb2d.AddForce(new Vector2(moveValue * moveSpeed * Time.deltaTime, 0f));
         }
         else {
             animator.SetBool("isWalking", false);
@@ -46,6 +48,7 @@ public class PlayerProto : MonoBehaviour
     public void noMove()
     {
         _isMoving = false;
+        rb2d.velocity = rb2d.velocity / 2f;
         moveValue = 0;
     }
 
