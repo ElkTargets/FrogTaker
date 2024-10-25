@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using Frogs;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Proto.Script
 {
@@ -14,6 +15,7 @@ namespace Proto.Script
         public bool somethingInside;
         public bool empty;
         public FrogData frog;
+        public AudioSource audioSource;
 
         public GameObject dedFrog;
         
@@ -60,6 +62,8 @@ namespace Proto.Script
                 NewFrog.FrogName = frog.frogName;
                 NewFrog.FrogSprite = frog.frogSprite;
                 NewFrog.corroutineStart = true;
+                audioSource.clip = frog.frogSound;
+                audioSource.Play();
                 
                 GameObject newDedFrog = Instantiate(dedFrog, this.transform.position, Quaternion.identity);
                 newDedFrog.GetComponent<SpriteRenderer>().sprite = frog.frogSprite;

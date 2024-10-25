@@ -16,4 +16,4 @@ MonoBehaviour:
   frogName: La Belle Verte
   frogDescription: Cette grenouille peuple de nombreux lieux, elle est verte et adore
     manger des donuts. Heureusement qu'elle ne mange pas les chapeaux...
-  frogSound: {fileID: 8300000, guid: c642b459bb407454ebc24a03cedbb9e5, type: 3}
+  frogSound: {fileID: 8300000, guid: c3d71bc0771990a41b2a35eb213dbd11, type: 3}

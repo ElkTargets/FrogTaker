@@ -16,4 +16,4 @@ MonoBehaviour:
   frogName: LG(renouille)S
   frogDescription: "Ses origines sont assez floues, mais la grenouille LGS est connue
     pour gonfler \xE9norm\xE9ment apr\xE8s avoir mang\xE9 sa mouche quotidienne."
-  frogSound: {fileID: 8300000, guid: c642b459bb407454ebc24a03cedbb9e5, type: 3}
+  frogSound: {fileID: 8300000, guid: dcc991cd06140c640bf5e231d5c8f591, type: 3}

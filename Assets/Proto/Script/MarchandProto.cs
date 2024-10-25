@@ -13,37 +13,44 @@ namespace Proto.Script
         private PlayerProto _player;
         private bool _facingRight;
         public GameObject visualRotatif;
+        public AudioSource audioSource;
         
         // Chapeau Invisible
         private bool _hat1;
         private bool _hat1Buy;
+        public GameObject hat1bought;
         public int hat1Price;
         public TextMeshProUGUI hat1PriceText;
         
         // Chapeau Haut de Forme
         private bool _hat2;
         private bool _hat2Buy;
+        public GameObject hat2bought;
         public int hat2Price;
         public TextMeshProUGUI hat2PriceText;
         
         // Chapeau Melon
         private bool _hat3;
         private bool _hat3Buy;
+        public GameObject hat3bought;
         public int hat3Price;
         public TextMeshProUGUI hat3PriceText;
         
         private bool _hat4;
         private bool _hat4Buy;
+        public GameObject hat4bought;
         public int hat4Price;
         public TextMeshProUGUI hat4PriceText;
         
         private bool _hat5;
         private bool _hat5Buy;
+        public GameObject hat5bought;
         public int hat5Price;
         public TextMeshProUGUI hat5PriceText;
         
         private bool _hat6;
         private bool _hat6Buy;
+        public GameObject hat6bought;
         public int hat6Price;
         public TextMeshProUGUI hat6PriceText;
 
@@ -65,6 +72,7 @@ namespace Proto.Script
             hillightSprite.SetActive(false);
             _hat1 = true;
             _hat1Buy = true;
+            hat1bought.SetActive(true);
             _player = FindObjectOfType<PlayerProto>();
             _facingRight = true;
             DisplayPrices();
@@ -171,6 +179,8 @@ namespace Proto.Script
                         _hat1Buy = true;
                         _player.hatSpriteRenderer.sprite = hat1Sprite;
                         _player.money -= hat1Price;
+                        hat1bought.SetActive(true);
+                        audioSource.Play();
                         ChangeBuyButtonText();
                     }
                 }
@@ -182,6 +192,8 @@ namespace Proto.Script
                         _hat2Buy = true;
                         _player.hatSpriteRenderer.sprite = hat2Sprite;
                         _player.money -= hat2Price;
+                        hat2bought.SetActive(true);
+                        audioSource.Play();
                         ChangeBuyButtonText();
                     }
                 }
@@ -193,6 +205,8 @@ namespace Proto.Script
                         _hat3Buy = true;
                         _player.hatSpriteRenderer.sprite = hat3Sprite;
                         _player.money -= hat3Price;
+                        hat3bought.SetActive(true);
+                        audioSource.Play();
                         ChangeBuyButtonText();
                     }
                 }
@@ -204,6 +218,8 @@ namespace Proto.Script
                         _hat4Buy = true;
                         _player.hatSpriteRenderer.sprite = hat4Sprite;
                         _player.money -= hat4Price;
+                        hat4bought.SetActive(true);
+                        audioSource.Play();
                         ChangeBuyButtonText();
                     }
                 }
@@ -215,6 +231,8 @@ namespace Proto.Script
                         _hat5Buy = true;
                         _player.hatSpriteRenderer.sprite = hat5Sprite;
                         _player.money -= hat5Price;
+                        hat5bought.SetActive(true);
+                        audioSource.Play();
                         ChangeBuyButtonText();
                     }
                 }
@@ -226,6 +244,8 @@ namespace Proto.Script
                         _hat6Buy = true;
                         _player.hatSpriteRenderer.sprite = hat6Sprite;
                         _player.money -= hat6Price;
+                        hat6bought.SetActive(true);
+                        audioSource.Play();
                         ChangeBuyButtonText();
                     }
                 }

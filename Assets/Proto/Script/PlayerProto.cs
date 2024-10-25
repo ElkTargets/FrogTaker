@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class PlayerProto : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerProto : MonoBehaviour
     public SpriteRenderer hatSpriteRenderer;
     public int money;
     public Rigidbody2D rb2d;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -29,10 +31,18 @@ public class PlayerProto : MonoBehaviour
             animator.SetBool("isWalking", true);
             //transform.Translate(moveValue * moveSpeed * Time.deltaTime, 0, 0);
             rb2d.AddForce(new Vector2(moveValue * moveSpeed * Time.deltaTime, 0f));
+            if (audioSource.isPlaying == false)
+            {
+                audioSource.Play();
+            }
+            audioSource.pitch = rb2d.velocity.magnitude / 2f;
+            animator.SetFloat("speedRate", rb2d.velocity.magnitude / 2f);
         }
         else {
             animator.SetBool("isWalking", false);
+            audioSource.Stop();
         }
+        
     }
 
     public void moveRight()
