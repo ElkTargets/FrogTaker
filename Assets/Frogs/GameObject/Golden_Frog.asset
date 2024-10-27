@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2864183af317c24fb7f9452aed57303, type: 3}
+  m_Name: Golden_Frog
+  m_EditorClassIdentifier: 
+  frogSprite: {fileID: 21300000, guid: b66bff380cfcf0b4b8a70de9ce9c3f3d, type: 3}
+  frogName: La Grenouille d'Or
+  frogDescription: "Cette grenouille est compos\xE9 d'or pur, elle est si lourde
+    qu'elle passe toute sa vie a glandouiller sans ne se soucier de rien d'autre."
+  frogSound: {fileID: 0}

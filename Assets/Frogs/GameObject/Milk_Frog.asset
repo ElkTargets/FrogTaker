@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2864183af317c24fb7f9452aed57303, type: 3}
+  m_Name: Milk_Frog
+  m_EditorClassIdentifier: 
+  frogSprite: {fileID: 21300000, guid: b8d650b802cac054a9ca8e0053851798, type: 3}
+  frogName: Grenouille Laiteuse
+  frogDescription: "Cette grenouille est connue pour se camouffler tr\xE8s facilement
+    dans les cappuchinos, imaginez si elle se camoufflait en chapeau ! Quel cauchemard
+    !"
+  frogSound: {fileID: 0}
