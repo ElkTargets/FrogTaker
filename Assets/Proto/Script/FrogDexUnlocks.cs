@@ -12,7 +12,7 @@ namespace Proto.Script
         
         public static bool Milk_Frog;
         public static bool Golden_Frog;
-        public static bool Frog6;
+        public static bool Mossy_Frog;
         
         public static bool Frog7;
         public static bool Frog8;
