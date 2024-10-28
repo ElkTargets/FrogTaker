@@ -17,6 +17,7 @@ public class PlayerProto : MonoBehaviour
     public int money;
     public Rigidbody2D rb2d;
     public AudioSource audioSource;
+    public ParticleSystem particleSystem;
 
     private void Awake()
     {
@@ -35,12 +36,17 @@ public class PlayerProto : MonoBehaviour
             {
                 audioSource.Play();
             }
+            if (particleSystem.isPlaying == false)
+            {
+                particleSystem.Play();
+            }
             audioSource.pitch = rb2d.velocity.magnitude / 2f;
             animator.SetFloat("speedRate", rb2d.velocity.magnitude / 2f);
         }
         else {
             animator.SetBool("isWalking", false);
             audioSource.Stop();
+            particleSystem.Stop();
         }
         
     }
